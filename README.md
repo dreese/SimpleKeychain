@@ -22,7 +22,6 @@ Please see the unit tests for examples of how to use these classes.
 Creator
 ---------------
 [Daniel Reese](http://www.danandcheryl.com/)
-
 [@dreese](http://twitter.com/dreese)
 
 License
