@@ -132,6 +132,13 @@
 	STAssertNil(error, [error localizedDescription]);
 }
 
+- (void)testUpdatingExistingValueShouldReturnNewValue
+{
+	[[SimpleKeychain sharedInstance] setString:@"testvalue" forKey:@"testkey" error:nil];
+	[[SimpleKeychain sharedInstance] setString:@"testvalue1" forKey:@"testkey" error:nil];
+	STAssertEqualObjects([[SimpleKeychain sharedInstance] stringForKey:@"testkey" error:nil], @"testvalue1", nil);
+}
+
 - (void)testResetShouldRemoveEverythingInKeychainItem
 {
 	[[SimpleKeychain sharedInstance] setString:@"testvalue" forKey:@"testkey" error:nil];

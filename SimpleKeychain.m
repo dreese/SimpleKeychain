@@ -82,9 +82,6 @@
 		status = SecItemUpdate((__bridge CFDictionaryRef)query, (__bridge CFDictionaryRef)attributesToUpdate);
 	}
 	else if (status == errSecItemNotFound) {
-		// Remove request to return data.
-		[query removeObjectForKey:(__bridge id)kSecReturnData];
-		
 		// Add new entry.
 		[query setObject:[value dataUsingEncoding:NSUTF8StringEncoding] forKey:(__bridge id)kSecValueData];
 		status = SecItemAdd((__bridge CFDictionaryRef)query, NULL);
@@ -103,6 +100,9 @@
 	
 	// Get parameters.
 	NSMutableDictionary *query = [self dictionaryForKey:key];
+	
+	// Request the keychain item be returned.
+	[query setObject:(id)kCFBooleanTrue forKey:(__bridge id)kSecReturnData];
 	
 	// Retrieve data from keychain item.
 	CFTypeRef dataFromKeychain = nil;
@@ -186,9 +186,6 @@
 	if (key) {
 		[query setObject:key forKey:(__bridge id)kSecAttrAccount];
 	}
-	
-	// Used when searching to request the keychain item be returned.
-	[query setObject:(id)kCFBooleanTrue forKey:(__bridge id)kSecReturnData];
 	
 	// Used when adding to request the keychain item be accessible only when the user is logged in.
 	[query setObject:(__bridge id)kSecAttrAccessibleWhenUnlocked forKey:(__bridge id)kSecAttrAccessible];
