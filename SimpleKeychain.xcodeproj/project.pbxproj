@@ -54,6 +54,7 @@
 		3753B76617055D7A002246F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3753B76917055D7A002246F4 /* SimpleKeychainTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleKeychainTests.m; sourceTree = "<group>"; };
 		37DFD0B7170892620020EF4F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		37DFD0BB17094B690020EF4F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +86,7 @@
 			children = (
 				3753B74D17055D7A002246F4 /* SimpleKeychain */,
 				3753B76217055D7A002246F4 /* SimpleKeychainTests */,
+				37DFD0BA17094B550020EF4F /* Documentation */,
 				3753B74A17055D7A002246F4 /* Frameworks */,
 				3753B74917055D7A002246F4 /* Products */,
 			);
@@ -143,6 +145,15 @@
 				3753B76517055D7A002246F4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		37DFD0BA17094B550020EF4F /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				37DFD0BB17094B690020EF4F /* README.md */,
+			);
+			name = Documentation;
+			path = SimpleKeychainTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
