@@ -40,6 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		37180E51170A2D72000A9DBA /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		3753B74817055D7A002246F4 /* libSimpleKeychain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSimpleKeychain.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3753B74B17055D7A002246F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3753B75917055D7A002246F4 /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +121,7 @@
 		37DFD0BA17094B550020EF4F /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				37180E51170A2D72000A9DBA /* LICENSE */,
 				37DFD0BB17094B690020EF4F /* README.md */,
 			);
 			name = Documentation;
