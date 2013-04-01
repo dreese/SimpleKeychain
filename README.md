@@ -4,7 +4,8 @@ Simple Keychain
 Description
 ---------------
 
-Simple class for storing secure information in the keychain on iOS.
+Simple class for storing secure information in the keychain on iOS. Its design is
+similar to [NSUserDefaults](http://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSUserDefaults_Class/).
 
 For more information, please visit the [project homepage](http://github.com/dreese/simple-keychain).
 
