@@ -1,4 +1,4 @@
-Fast Socket
+Simple Keychain
 ===============
 
 Description
