@@ -11,11 +11,12 @@
 		3753B75117055D7A002246F4 /* SimpleKeychain.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3753B75017055D7A002246F4 /* SimpleKeychain.h */; };
 		3753B75317055D7A002246F4 /* SimpleKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3753B75217055D7A002246F4 /* SimpleKeychain.m */; };
 		3753B75B17055D7A002246F4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3753B75A17055D7A002246F4 /* SenTestingKit.framework */; };
-		3753B75D17055D7A002246F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3753B75C17055D7A002246F4 /* UIKit.framework */; };
 		3753B75E17055D7A002246F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3753B74B17055D7A002246F4 /* Foundation.framework */; };
 		3753B76117055D7A002246F4 /* libSimpleKeychain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3753B74817055D7A002246F4 /* libSimpleKeychain.a */; };
 		3753B76717055D7A002246F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3753B76517055D7A002246F4 /* InfoPlist.strings */; };
 		3753B76A17055D7A002246F4 /* SimpleKeychainTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3753B76917055D7A002246F4 /* SimpleKeychainTests.m */; };
+		37DFD0B8170892620020EF4F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DFD0B7170892620020EF4F /* Security.framework */; };
+		37DFD0B9170892CC0020EF4F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DFD0B7170892620020EF4F /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,11 +50,10 @@
 		3753B75217055D7A002246F4 /* SimpleKeychain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleKeychain.m; sourceTree = "<group>"; };
 		3753B75917055D7A002246F4 /* SimpleKeychainTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleKeychainTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3753B75A17055D7A002246F4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		3753B75C17055D7A002246F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		3753B76417055D7A002246F4 /* SimpleKeychainTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleKeychainTests-Info.plist"; sourceTree = "<group>"; };
 		3753B76617055D7A002246F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3753B76817055D7A002246F4 /* SimpleKeychainTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleKeychainTests.h; sourceTree = "<group>"; };
 		3753B76917055D7A002246F4 /* SimpleKeychainTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleKeychainTests.m; sourceTree = "<group>"; };
+		37DFD0B7170892620020EF4F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3753B74C17055D7A002246F4 /* Foundation.framework in Frameworks */,
+				37DFD0B8170892620020EF4F /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,8 +71,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3753B75B17055D7A002246F4 /* SenTestingKit.framework in Frameworks */,
-				3753B75D17055D7A002246F4 /* UIKit.framework in Frameworks */,
 				3753B75E17055D7A002246F4 /* Foundation.framework in Frameworks */,
+				37DFD0B9170892CC0020EF4F /* Security.framework in Frameworks */,
 				3753B76117055D7A002246F4 /* libSimpleKeychain.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,8 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				3753B74B17055D7A002246F4 /* Foundation.framework */,
+				37DFD0B7170892620020EF4F /* Security.framework */,
 				3753B75A17055D7A002246F4 /* SenTestingKit.framework */,
-				3753B75C17055D7A002246F4 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,7 +130,6 @@
 		3753B76217055D7A002246F4 /* SimpleKeychainTests */ = {
 			isa = PBXGroup;
 			children = (
-				3753B76817055D7A002246F4 /* SimpleKeychainTests.h */,
 				3753B76917055D7A002246F4 /* SimpleKeychainTests.m */,
 				3753B76317055D7A002246F4 /* Supporting Files */,
 			);
@@ -403,6 +403,7 @@
 				3753B76F17055D7A002246F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3753B77017055D7A002246F4 /* Build configuration list for PBXNativeTarget "SimpleKeychainTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +412,7 @@
 				3753B77217055D7A002246F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
