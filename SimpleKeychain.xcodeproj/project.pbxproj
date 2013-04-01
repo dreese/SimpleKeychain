@@ -8,15 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3753B74C17055D7A002246F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3753B74B17055D7A002246F4 /* Foundation.framework */; };
-		3753B75117055D7A002246F4 /* SimpleKeychain.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3753B75017055D7A002246F4 /* SimpleKeychain.h */; };
-		3753B75317055D7A002246F4 /* SimpleKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3753B75217055D7A002246F4 /* SimpleKeychain.m */; };
 		3753B75B17055D7A002246F4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3753B75A17055D7A002246F4 /* SenTestingKit.framework */; };
 		3753B75E17055D7A002246F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3753B74B17055D7A002246F4 /* Foundation.framework */; };
 		3753B76117055D7A002246F4 /* libSimpleKeychain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3753B74817055D7A002246F4 /* libSimpleKeychain.a */; };
-		3753B76717055D7A002246F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3753B76517055D7A002246F4 /* InfoPlist.strings */; };
-		3753B76A17055D7A002246F4 /* SimpleKeychainTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3753B76917055D7A002246F4 /* SimpleKeychainTests.m */; };
 		37DFD0B8170892620020EF4F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DFD0B7170892620020EF4F /* Security.framework */; };
 		37DFD0B9170892CC0020EF4F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DFD0B7170892620020EF4F /* Security.framework */; };
+		37DFD0BF17094EA60020EF4F /* SimpleKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DFD0BE17094EA60020EF4F /* SimpleKeychain.m */; };
+		37DFD0C317094EB50020EF4F /* SimpleKeychainTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DFD0C117094EB50020EF4F /* SimpleKeychainTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +34,6 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				3753B75117055D7A002246F4 /* SimpleKeychain.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,16 +42,14 @@
 /* Begin PBXFileReference section */
 		3753B74817055D7A002246F4 /* libSimpleKeychain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSimpleKeychain.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3753B74B17055D7A002246F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		3753B74F17055D7A002246F4 /* SimpleKeychain-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleKeychain-Prefix.pch"; sourceTree = "<group>"; };
-		3753B75017055D7A002246F4 /* SimpleKeychain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleKeychain.h; sourceTree = "<group>"; };
-		3753B75217055D7A002246F4 /* SimpleKeychain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleKeychain.m; sourceTree = "<group>"; };
-		3753B75917055D7A002246F4 /* SimpleKeychainTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleKeychainTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3753B75917055D7A002246F4 /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3753B75A17055D7A002246F4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		3753B76417055D7A002246F4 /* SimpleKeychainTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleKeychainTests-Info.plist"; sourceTree = "<group>"; };
-		3753B76617055D7A002246F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3753B76917055D7A002246F4 /* SimpleKeychainTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleKeychainTests.m; sourceTree = "<group>"; };
 		37DFD0B7170892620020EF4F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		37DFD0BB17094B690020EF4F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
+		37DFD0BD17094EA60020EF4F /* SimpleKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKeychain.h; sourceTree = SOURCE_ROOT; };
+		37DFD0BE17094EA60020EF4F /* SimpleKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKeychain.m; sourceTree = SOURCE_ROOT; };
+		37DFD0C017094EB50020EF4F /* UnitTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = SOURCE_ROOT; };
+		37DFD0C117094EB50020EF4F /* SimpleKeychainTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKeychainTests.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +79,7 @@
 		3753B73F17055D7A002246F4 = {
 			isa = PBXGroup;
 			children = (
-				3753B74D17055D7A002246F4 /* SimpleKeychain */,
-				3753B76217055D7A002246F4 /* SimpleKeychainTests */,
+				3753B74D17055D7A002246F4 /* Source */,
 				37DFD0BA17094B550020EF4F /* Documentation */,
 				3753B74A17055D7A002246F4 /* Frameworks */,
 				3753B74917055D7A002246F4 /* Products */,
@@ -96,7 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				3753B74817055D7A002246F4 /* libSimpleKeychain.a */,
-				3753B75917055D7A002246F4 /* SimpleKeychainTests.octest */,
+				3753B75917055D7A002246F4 /* UnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,40 +105,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3753B74D17055D7A002246F4 /* SimpleKeychain */ = {
+		3753B74D17055D7A002246F4 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				3753B75017055D7A002246F4 /* SimpleKeychain.h */,
-				3753B75217055D7A002246F4 /* SimpleKeychain.m */,
-				3753B74E17055D7A002246F4 /* Supporting Files */,
+				37DFD0BD17094EA60020EF4F /* SimpleKeychain.h */,
+				37DFD0BE17094EA60020EF4F /* SimpleKeychain.m */,
+				37DFD0C117094EB50020EF4F /* SimpleKeychainTests.m */,
+				37DFD0C017094EB50020EF4F /* UnitTests-Info.plist */,
 			);
+			name = Source;
 			path = SimpleKeychain;
-			sourceTree = "<group>";
-		};
-		3753B74E17055D7A002246F4 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3753B74F17055D7A002246F4 /* SimpleKeychain-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3753B76217055D7A002246F4 /* SimpleKeychainTests */ = {
-			isa = PBXGroup;
-			children = (
-				3753B76917055D7A002246F4 /* SimpleKeychainTests.m */,
-				3753B76317055D7A002246F4 /* Supporting Files */,
-			);
-			path = SimpleKeychainTests;
-			sourceTree = "<group>";
-		};
-		3753B76317055D7A002246F4 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3753B76417055D7A002246F4 /* SimpleKeychainTests-Info.plist */,
-				3753B76517055D7A002246F4 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		37DFD0BA17094B550020EF4F /* Documentation */ = {
@@ -176,9 +146,9 @@
 			productReference = 3753B74817055D7A002246F4 /* libSimpleKeychain.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		3753B75817055D7A002246F4 /* SimpleKeychainTests */ = {
+		3753B75817055D7A002246F4 /* UnitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3753B77017055D7A002246F4 /* Build configuration list for PBXNativeTarget "SimpleKeychainTests" */;
+			buildConfigurationList = 3753B77017055D7A002246F4 /* Build configuration list for PBXNativeTarget "UnitTests" */;
 			buildPhases = (
 				3753B75417055D7A002246F4 /* Sources */,
 				3753B75517055D7A002246F4 /* Frameworks */,
@@ -190,9 +160,9 @@
 			dependencies = (
 				3753B76017055D7A002246F4 /* PBXTargetDependency */,
 			);
-			name = SimpleKeychainTests;
+			name = UnitTests;
 			productName = SimpleKeychainTests;
-			productReference = 3753B75917055D7A002246F4 /* SimpleKeychainTests.octest */;
+			productReference = 3753B75917055D7A002246F4 /* UnitTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -217,7 +187,7 @@
 			projectRoot = "";
 			targets = (
 				3753B74717055D7A002246F4 /* SimpleKeychain */,
-				3753B75817055D7A002246F4 /* SimpleKeychainTests */,
+				3753B75817055D7A002246F4 /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -227,7 +197,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3753B76717055D7A002246F4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3753B75317055D7A002246F4 /* SimpleKeychain.m in Sources */,
+				37DFD0BF17094EA60020EF4F /* SimpleKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3753B76A17055D7A002246F4 /* SimpleKeychainTests.m in Sources */,
+				37DFD0C317094EB50020EF4F /* SimpleKeychainTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,17 +244,6 @@
 			targetProxy = 3753B75F17055D7A002246F4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		3753B76517055D7A002246F4 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3753B76617055D7A002246F4 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3753B76B17055D7A002246F4 /* Debug */ = {
@@ -345,8 +303,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/SimpleKeychain.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SimpleKeychain/SimpleKeychain-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -357,8 +313,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/SimpleKeychain.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SimpleKeychain/SimpleKeychain-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -372,9 +326,7 @@
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SimpleKeychain/SimpleKeychain-Prefix.pch";
-				INFOPLIST_FILE = "SimpleKeychainTests/SimpleKeychainTests-Info.plist";
+				INFOPLIST_FILE = "UnitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -387,9 +339,7 @@
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SimpleKeychain/SimpleKeychain-Prefix.pch";
-				INFOPLIST_FILE = "SimpleKeychainTests/SimpleKeychainTests-Info.plist";
+				INFOPLIST_FILE = "UnitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -416,7 +366,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3753B77017055D7A002246F4 /* Build configuration list for PBXNativeTarget "SimpleKeychainTests" */ = {
+		3753B77017055D7A002246F4 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3753B77117055D7A002246F4 /* Debug */,
