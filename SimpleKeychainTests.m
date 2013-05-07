@@ -39,16 +39,16 @@
 
 - (void)setUp
 {
-    [super setUp];
-    [SimpleKeychain sharedInstance].bundle = [NSBundle bundleForClass:[self class]];
+	[super setUp];
+	[SimpleKeychain sharedInstance].bundle = [NSBundle bundleForClass:[self class]];
 	[SimpleKeychain sharedInstance].serviceName = nil;
 	[[SimpleKeychain sharedInstance] removeAllStrings:nil];
 }
 
 - (void)tearDown
 {
-    // Tear-down code here.
-    [super tearDown];
+	// Tear-down code here.
+	[super tearDown];
 }
 
 #pragma mark - Tests
