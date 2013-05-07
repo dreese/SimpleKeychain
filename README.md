@@ -12,7 +12,7 @@ For more information, please visit the [project homepage](http://github.com/dree
 Download
 ---------------
 
-Download [SimpleKeychain](https://github.com/dreese/simple-keychain/zipball/master).
+Download [SimpleKeychain](https://github.com/dreese/simple-keychain/archive/master.zip).
 
 Examples
 ---------------
