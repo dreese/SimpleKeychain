@@ -12,12 +12,23 @@ For more information, please visit the [project homepage](http://github.com/dree
 Download
 ---------------
 
-Download [SimpleKeychain](https://github.com/dreese/simple-keychain/archive/master.zip).
+Download the [latest release](https://github.com/dreese/simple-keychain/releases) of FastSocket or try the [nightly version](https://github.com/dreese/simple-keychain/archive/master.zip).
 
 Examples
 ---------------
 
-Please see the unit tests for examples of how to use these classes.
+Please see the unit tests for examples of how to use this class.
+
+Release Notes
+---------------
+
+2013 Oct ? — v1.1
+
+	• Added header documentation for use in Xcode 5.
+
+2013 May 7 — v1.0
+
+	• Initial release.
 
 Creator
 ---------------
