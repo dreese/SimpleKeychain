@@ -23,15 +23,52 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface SimpleKeychain : NSObject
 
+/**
+ The service name used to store and retrieve in the system keychain. The default value is the app bundle identifier.
+ */
+@property (nonatomic, strong) NSString *serviceName;
+
+/**
+ Returns the singleton SimpleKeychain instance.
+ 
+ @return The singleton SimpleKeychain instance.
+ */
 + (instancetype)sharedInstance;
 
-@property (nonatomic, strong) NSString *serviceName; // Defaults to app bundle identifier.
-
+/**
+ Stores the value for the given key. Optionally returns any error that occurs.
+ 
+ @param value The string value to store.
+ @param key The string key of the value to be stored.
+ @param error An optional output parameter to capture any error that might occur.
+ */
 - (void)setString:(NSString *)value forKey:(NSString *)key error:(NSError **)error;
+
+/**
+ Returns the value stored for the given key. Optionally returns any error that occurs.
+ 
+ @param key The string key of the stored value.
+ @param error An optional output parameter to capture any error that might occur.
+ @return The string value stored for the given key.
+ */
 - (NSString *)stringForKey:(NSString *)key error:(NSError **)error;
+
+/**
+ Deletes the value for the given key. Optionally returns any error that occurs.
+ 
+ @param key The string key of the stored value.
+ @param error An optional output parameter to capture any error that might occur.
+ */
 - (void)removeStringForKey:(NSString *)key error:(NSError **)error;
+
+/**
+ Deletes all values in the keychain for the current service name. Optionally returns any error that occurs.
+ 
+ @param error An optional output parameter to capture any error that might occur.
+ */
 - (void)removeAllStrings:(NSError **)error;
 
 @end
