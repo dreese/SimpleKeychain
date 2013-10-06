@@ -22,10 +22,10 @@
 //
 
 #import "SimpleKeychain.h"
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
 
-@interface SimpleKeychainTests : SenTestCase
+@interface SimpleKeychainTests : XCTestCase
 @end
 
 
@@ -55,73 +55,73 @@
 
 - (void)testSharedInstanceShouldNotBeNil
 {
-	STAssertNotNil([SimpleKeychain sharedInstance], nil);
+	XCTAssertNotNil([SimpleKeychain sharedInstance]);
 }
 
 - (void)testSharedInstanceShouldAlwaysReturnSameObject
 {
-	STAssertEqualObjects([SimpleKeychain sharedInstance], [SimpleKeychain sharedInstance], nil);
+	XCTAssertEqualObjects([SimpleKeychain sharedInstance], [SimpleKeychain sharedInstance]);
 }
 
 - (void)testDefaultServiceNameShouldBeBundleIdentifier
 {
 	NSString *bid = [[NSBundle bundleForClass:[self class]] bundleIdentifier];
-	STAssertEqualObjects([[SimpleKeychain sharedInstance] serviceName], bid, nil);
+	XCTAssertEqualObjects([[SimpleKeychain sharedInstance] serviceName], bid);
 }
 
 - (void)testChangingServiceNameShouldBeRememberd
 {
 	[SimpleKeychain sharedInstance].serviceName = @"danwazhere";
-	STAssertEqualObjects([[SimpleKeychain sharedInstance] serviceName], @"danwazhere", nil);
+	XCTAssertEqualObjects([[SimpleKeychain sharedInstance] serviceName], @"danwazhere");
 }
 
 - (void)testStringFromErrorCodeShouldReturnNilForUnknownCodes
 {
-	STAssertEqualObjects([SimpleKeychain stringFromErrorCode:1], nil, nil);
+	XCTAssertEqualObjects([SimpleKeychain stringFromErrorCode:1], nil);
 }
 
 - (void)testStringFromErrorCodeShouldReturnCorrectStrings
 {
-	STAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecSuccess], @"No error.", nil);
-	STAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecUnimplemented], @"Function or operation not implemented.", nil);
-	STAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecParam], @"One or more parameters passed to the function were not valid.", nil);
-	STAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecAllocate], @"Failed to allocate memory.", nil);
-	STAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecNotAvailable], @"No trust results are available.", nil);
-	STAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecAuthFailed], @"Authorization/Authentication failed.", nil);
-	STAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecDuplicateItem], @"The item already exists.", nil);
-	STAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecItemNotFound], @"The item cannot be found.", nil);
-	STAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecInteractionNotAllowed], @"Interaction with the Security Server is not allowed.", nil);
-	STAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecDecode], @"Unable to decode the provided data.", nil);
+	XCTAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecSuccess], @"No error.");
+	XCTAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecUnimplemented], @"Function or operation not implemented.");
+	XCTAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecParam], @"One or more parameters passed to the function were not valid.");
+	XCTAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecAllocate], @"Failed to allocate memory.");
+	XCTAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecNotAvailable], @"No trust results are available.");
+	XCTAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecAuthFailed], @"Authorization/Authentication failed.");
+	XCTAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecDuplicateItem], @"The item already exists.");
+	XCTAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecItemNotFound], @"The item cannot be found.");
+	XCTAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecInteractionNotAllowed], @"Interaction with the Security Server is not allowed.");
+	XCTAssertEqualObjects([SimpleKeychain stringFromErrorCode:errSecDecode], @"Unable to decode the provided data.");
 }
 
 - (void)testGettingValueWithNilKeyShouldThrowAnException
 {
-	STAssertThrows([[SimpleKeychain sharedInstance] stringForKey:nil error:nil], nil);
+	XCTAssertThrows([[SimpleKeychain sharedInstance] stringForKey:nil error:nil]);
 }
 
 - (void)testDefaultValueOfMissingItemShouldBeNil
 {
-	STAssertNil([[SimpleKeychain sharedInstance] stringForKey:@"testkey" error:nil], nil);
+	XCTAssertNil([[SimpleKeychain sharedInstance] stringForKey:@"testkey" error:nil]);
 }
 
 - (void)testGettingValueOfMissingItemShouldReturnNotFoundError
 {
 	NSError *error = nil;
 	[[SimpleKeychain sharedInstance] stringForKey:@"testkey" error:&error];
-	STAssertEquals([error code], errSecItemNotFound, nil);
+	XCTAssertEqual([error code], errSecItemNotFound);
 }
 
 - (void)testSettingValueShouldNotReturnError
 {
 	NSError *error = nil;
 	[[SimpleKeychain sharedInstance] setString:@"testvalue" forKey:@"testkey" error:&error];
-	STAssertNil(error, [error localizedDescription]);
+	XCTAssertNil(error, @"%@", [error localizedDescription]);
 }
 
 - (void)testSettingValueShouldSaveValue
 {
 	[[SimpleKeychain sharedInstance] setString:@"testvalue" forKey:@"testkey" error:nil];
-	STAssertEqualObjects([[SimpleKeychain sharedInstance] stringForKey:@"testkey" error:nil], @"testvalue", nil);
+	XCTAssertEqualObjects([[SimpleKeychain sharedInstance] stringForKey:@"testkey" error:nil], @"testvalue");
 }
 
 - (void)testGettingSavedValueShouldNotReturnError
@@ -129,14 +129,14 @@
 	[[SimpleKeychain sharedInstance] setString:@"testvalue" forKey:@"testkey" error:nil];
 	NSError *error = nil;
 	[[SimpleKeychain sharedInstance] stringForKey:@"testkey" error:&error];
-	STAssertNil(error, [error localizedDescription]);
+	XCTAssertNil(error, @"%@", [error localizedDescription]);
 }
 
 - (void)testUpdatingExistingValueShouldReturnNewValue
 {
 	[[SimpleKeychain sharedInstance] setString:@"testvalue" forKey:@"testkey" error:nil];
 	[[SimpleKeychain sharedInstance] setString:@"testvalue1" forKey:@"testkey" error:nil];
-	STAssertEqualObjects([[SimpleKeychain sharedInstance] stringForKey:@"testkey" error:nil], @"testvalue1", nil);
+	XCTAssertEqualObjects([[SimpleKeychain sharedInstance] stringForKey:@"testkey" error:nil], @"testvalue1");
 }
 
 - (void)testResetShouldRemoveEverythingInKeychainItem
@@ -144,8 +144,8 @@
 	[[SimpleKeychain sharedInstance] setString:@"testvalue" forKey:@"testkey" error:nil];
 	NSError *error = nil;
 	[[SimpleKeychain sharedInstance] removeAllStrings:&error];
-	STAssertNil(error, nil);
-	STAssertNil([[SimpleKeychain sharedInstance] stringForKey:@"testkey" error:nil], nil);
+	XCTAssertNil(error);
+	XCTAssertNil([[SimpleKeychain sharedInstance] stringForKey:@"testkey" error:nil]);
 }
 
 @end

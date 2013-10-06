@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3753B74C17055D7A002246F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3753B74B17055D7A002246F4 /* Foundation.framework */; };
-		3753B75B17055D7A002246F4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3753B75A17055D7A002246F4 /* SenTestingKit.framework */; };
 		3753B75E17055D7A002246F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3753B74B17055D7A002246F4 /* Foundation.framework */; };
 		3753B76117055D7A002246F4 /* libSimpleKeychain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3753B74817055D7A002246F4 /* libSimpleKeychain.a */; };
 		37DFD0B8170892620020EF4F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DFD0B7170892620020EF4F /* Security.framework */; };
@@ -43,8 +42,7 @@
 		37180E51170A2D72000A9DBA /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		3753B74817055D7A002246F4 /* libSimpleKeychain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSimpleKeychain.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3753B74B17055D7A002246F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		3753B75917055D7A002246F4 /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3753B75A17055D7A002246F4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		3753B75917055D7A002246F4 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37DFD0B7170892620020EF4F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		37DFD0BB17094B690020EF4F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		37DFD0BD17094EA60020EF4F /* SimpleKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKeychain.h; sourceTree = SOURCE_ROOT; };
@@ -67,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3753B75B17055D7A002246F4 /* SenTestingKit.framework in Frameworks */,
 				3753B75E17055D7A002246F4 /* Foundation.framework in Frameworks */,
 				37DFD0B9170892CC0020EF4F /* Security.framework in Frameworks */,
 				3753B76117055D7A002246F4 /* libSimpleKeychain.a in Frameworks */,
@@ -91,7 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				3753B74817055D7A002246F4 /* libSimpleKeychain.a */,
-				3753B75917055D7A002246F4 /* UnitTests.octest */,
+				3753B75917055D7A002246F4 /* UnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,7 +98,6 @@
 			children = (
 				3753B74B17055D7A002246F4 /* Foundation.framework */,
 				37DFD0B7170892620020EF4F /* Security.framework */,
-				3753B75A17055D7A002246F4 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -164,8 +160,8 @@
 			);
 			name = UnitTests;
 			productName = SimpleKeychainTests;
-			productReference = 3753B75917055D7A002246F4 /* UnitTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 3753B75917055D7A002246F4 /* UnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -304,6 +300,7 @@
 		3753B76E17055D7A002246F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/SimpleKeychain.dst;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -314,6 +311,7 @@
 		3753B76F17055D7A002246F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/SimpleKeychain.dst;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -330,7 +328,6 @@
 				);
 				INFOPLIST_FILE = "UnitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -343,7 +340,6 @@
 				);
 				INFOPLIST_FILE = "UnitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
