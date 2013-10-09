@@ -66,7 +66,7 @@
 	return _serviceName;
 }
 
-- (void)setString:(NSString *)value forKey:(NSString *)key error:(NSError **)error
+- (BOOL)setString:(NSString *)value forKey:(NSString *)key error:(NSError **)error
 {
 	NSParameterAssert(key != nil);
 	NSParameterAssert(value != nil);
@@ -91,7 +91,9 @@
 	if (error && status != errSecSuccess) {
 		NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [SimpleKeychain stringFromErrorCode:status]};
 		*error = [NSError errorWithDomain:@"SimpleKeychain" code:status userInfo:userInfo];
+        return NO;
 	}
+    return YES;
 }
 
 - (NSString *)stringForKey:(NSString *)key error:(NSError **)error
@@ -123,7 +125,7 @@
 	return result;
 }
 
-- (void)removeStringForKey:(NSString *)key error:(NSError **)error
+- (BOOL)removeStringForKey:(NSString *)key error:(NSError **)error
 {
 	NSParameterAssert(key != nil);
 	
@@ -137,10 +139,12 @@
 	if (error && status != errSecSuccess) {
 		NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [SimpleKeychain stringFromErrorCode:status]};
 		*error = [NSError errorWithDomain:@"SimpleKeychain" code:status userInfo:userInfo];
+        return NO;
 	}
+    return YES;
 }
 
-- (void)removeAllStrings:(NSError **)error
+- (BOOL)removeAllStrings:(NSError **)error
 {
 	// Get parameters. Do not include key so that items in the keychain will be deleted.
 	NSMutableDictionary *query = [self dictionaryForKey:nil];
@@ -152,7 +156,9 @@
 	if (error && status != errSecSuccess) {
 		NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [SimpleKeychain stringFromErrorCode:status]};
 		*error = [NSError errorWithDomain:@"SimpleKeychain" code:status userInfo:userInfo];
+        return NO;
 	}
+    return YES;
 }
 
 #pragma mark - Helper Methods

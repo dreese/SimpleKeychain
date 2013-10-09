@@ -44,15 +44,16 @@
  @param value The string value to store.
  @param key The string key of the value to be stored.
  @param error An optional output parameter to capture any error that might occur.
+ @return NO if an error occurred, YES otherwise.
  */
-- (void)setString:(NSString *)value forKey:(NSString *)key error:(NSError **)error;
+- (BOOL)setString:(NSString *)value forKey:(NSString *)key error:(NSError **)error;
 
 /**
  Returns the value stored for the given key. Optionally returns any error that occurs.
  
  @param key The string key of the stored value.
  @param error An optional output parameter to capture any error that might occur.
- @return The string value stored for the given key.
+ @return The string value stored for the given key, or nil if an error occurred.
  */
 - (NSString *)stringForKey:(NSString *)key error:(NSError **)error;
 
@@ -61,14 +62,16 @@
  
  @param key The string key of the stored value.
  @param error An optional output parameter to capture any error that might occur.
+ @return NO if an error occurred, YES otherwise.
  */
-- (void)removeStringForKey:(NSString *)key error:(NSError **)error;
+- (BOOL)removeStringForKey:(NSString *)key error:(NSError **)error;
 
 /**
  Deletes all values in the keychain for the current service name. Optionally returns any error that occurs.
  
  @param error An optional output parameter to capture any error that might occur.
+ @return NO if an error occurred, YES otherwise.
  */
-- (void)removeAllStrings:(NSError **)error;
+- (BOOL)removeAllStrings:(NSError **)error;
 
 @end
