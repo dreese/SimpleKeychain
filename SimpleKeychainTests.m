@@ -96,7 +96,10 @@
 
 - (void)testGettingValueWithNilKeyShouldThrowAnException
 {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnonnull"
 	XCTAssertThrows([[SimpleKeychain sharedInstance] stringForKey:nil error:nil]);
+#pragma clang diagnostic pop
 }
 
 - (void)testDefaultValueOfMissingItemShouldBeNil

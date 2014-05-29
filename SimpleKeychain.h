@@ -46,7 +46,7 @@
  @param error An optional output parameter to capture any error that might occur.
  @return NO if an error occurred, YES otherwise.
  */
-- (BOOL)setString:(NSString *)value forKey:(NSString *)key error:(NSError **)error;
+- (BOOL)setString:(NSString *)value forKey:(NSString *)key error:(NSError **)error __attribute__((nonnull (1,2)));
 
 /**
  Returns the value stored for the given key. Optionally returns any error that occurs.
@@ -55,7 +55,7 @@
  @param error An optional output parameter to capture any error that might occur.
  @return The string value stored for the given key, or nil if an error occurred.
  */
-- (NSString *)stringForKey:(NSString *)key error:(NSError **)error;
+- (NSString *)stringForKey:(NSString *)key error:(NSError **)error __attribute__((nonnull (1)));
 
 /**
  Deletes the value for the given key. Optionally returns any error that occurs.
@@ -64,7 +64,7 @@
  @param error An optional output parameter to capture any error that might occur.
  @return NO if an error occurred, YES otherwise.
  */
-- (BOOL)removeStringForKey:(NSString *)key error:(NSError **)error;
+- (BOOL)removeStringForKey:(NSString *)key error:(NSError **)error __attribute__((nonnull (1)));
 
 /**
  Deletes all values in the keychain for the current service name. Optionally returns any error that occurs.
