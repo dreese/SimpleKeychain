@@ -40,9 +40,8 @@
 #import <Security/Security.h>
 
 
-// This property is used only for unit testing.
 @interface SimpleKeychain ()
-@property (nonatomic, strong) NSBundle *bundle;
+@property (nonatomic, strong) NSBundle *bundle; // Used only for unit testing.
 @end
 
 
@@ -187,7 +186,7 @@
 	// The type of object being stored.
 	[query setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
 	
-	// The service and account are used to uniquely identifier a keychain item.
+	// The service and account are used to uniquely identify a keychain item.
 	[query setObject:self.serviceName forKey:(__bridge id)kSecAttrService];
 	if (key) {
 		[query setObject:key forKey:(__bridge id)kSecAttrAccount];
