@@ -91,9 +91,9 @@
 	if (error && status != errSecSuccess) {
 		NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [SimpleKeychain stringFromErrorCode:status]};
 		*error = [NSError errorWithDomain:@"SimpleKeychain" code:status userInfo:userInfo];
-        return NO;
+		return NO;
 	}
-    return YES;
+	return YES;
 }
 
 - (NSString *)stringForKey:(NSString *)key error:(NSError **)error
@@ -139,9 +139,9 @@
 	if (error && status != errSecSuccess) {
 		NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [SimpleKeychain stringFromErrorCode:status]};
 		*error = [NSError errorWithDomain:@"SimpleKeychain" code:status userInfo:userInfo];
-        return NO;
+		return NO;
 	}
-    return YES;
+	return YES;
 }
 
 - (BOOL)removeAllStrings:(NSError **)error
@@ -156,9 +156,9 @@
 	if (error && status != errSecSuccess) {
 		NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [SimpleKeychain stringFromErrorCode:status]};
 		*error = [NSError errorWithDomain:@"SimpleKeychain" code:status userInfo:userInfo];
-        return NO;
+		return NO;
 	}
-    return YES;
+	return YES;
 }
 
 #pragma mark - Helper Methods
